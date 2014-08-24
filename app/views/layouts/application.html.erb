@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Splurty4</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
 
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 
@@ -29,7 +29,23 @@
 	</header>
 	<hr />
 	<br class="clear" />
-<%= yield %>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+
+	<div id="footer">
+		<div class="container">
+			<div class="col-xs-6">
+				<%= link_to "This isn't enough, I need more", "#", :class => 'next-quote' %>
+			</div>
+			<div class="col-xs-6 footer-blurb">
+			<div class="col-xs-6">
+				Proudly hacked in Mississauga, ON by - <a href="http://www.adeelkhan.ca">Adeel Khan</a><br />
+				Want to build your own Splurty Web App -<a href="http://thefirehoseproject.com"> Learn how to code here</a>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
