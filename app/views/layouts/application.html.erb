@@ -25,14 +25,13 @@
 			</div>
 			<% end %>
 		</div>
-		<div class="col-xs-4 slogan">
+		<div class="col-xs-4 hidden-xs slogan">
 			Splurting out unsolicited advice about entrepreneurship since 2014
 		</div>
-
-
-
-		<div class="col-xs-5 links">
+		<div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links">
+			<!-- Button trigger modal -->
 			<%= link_to 'Contribute', "javascript:void(0):",:data =>{:toggle =>"modal",:target =>"#myModal"} %>
+			&nbsp;&nbsp;
 			<%= link_to 'About', about_path %>
 		</div>	
 	</header>
@@ -50,11 +49,10 @@
 
 	<div id="footer">
 		<div class="container">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-sm-6">
 				<%= link_to "This isn't enough, I need more", root_path, :class => 'next-quote' %>
 			</div>
-			<div class="col-xs-6 footer-blurb">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-sm-6 footer-blurb">
 				Proudly hacked in Mississauga, ON by - <a href="http://www.adeelkhan.ca">Adeel Khan</a><br />
 				Want to build your own Splurty Web App -<a href="http://thefirehoseproject.com"> Learn how to code here</a>
 			</div>
@@ -75,8 +73,9 @@
 
 	      <%= simple_form_for Quote.new do |f| %>
 	      	<div class="modal-body">
-				<%= f.input :saying %>
-				<%= f.input :author %>
+				<%= f.input :saying, :label => "Enter the quote that you'd like to add", :placeholder => "The daily commute to your office is from the bedroom to the living room" %>
+				<br />
+				<%= f.input :author, :label => "Who is the author of this quote?", :placeholder => 'Inc Magazine' %>
 				<br />
 			</div>
 	      	<div class="modal-footer">
